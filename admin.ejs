@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+<style>
+body { background:#111; color:white; font-family:Arial; }
+input { padding:10px; margin:5px; background:#222; color:white; border:1px solid #333; }
+button { padding:10px; background:#6a00ff; color:white; border:none; }
+</style>
+</head>
+<body>
+
+<h1>Admin Panel</h1>
+
+<form method="POST" action="/upload" enctype="multipart/form-data">
+<input name="title" placeholder="Course Title" required>
+<input name="price" placeholder="Price" required>
+<input type="file" name="coursefile" required>
+<button>Upload Course</button>
+</form>
+
+<h2>Existing Courses</h2>
+<% courses.forEach(course => { %>
+<p><%= course.title %> - $<%= course.price %></p>
+<% }) %>
+
+</body>
+</html>
